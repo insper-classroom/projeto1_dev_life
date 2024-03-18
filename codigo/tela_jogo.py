@@ -33,6 +33,14 @@ def desenha_tela(janela, estado, altura_tela, largura_tela):
     mensagem = estado['mensagem']
     motor.desenha_string(janela, 0, altura_tela-1, mensagem, PRETO, BRANCO)
 
+     # Desenha a quantidade de vidas
+    quantidade_vidas = estado['vidas']
+    max_vidas = estado['max_vidas']
+    coracao_cheio = '❤'
+    coracao_vazio = '🤍'
+    vidas_desenhadas = coracao_cheio * quantidade_vidas + coracao_vazio * (max_vidas - quantidade_vidas)
+    motor.desenha_string(janela, 0, altura_tela - 1, vidas_desenhadas, PRETO, BRANCO)
+
     motor.mostra_janela(janela)
 
 
