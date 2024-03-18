@@ -29,9 +29,9 @@ def desenha_tela(janela, estado, altura_tela, largura_tela):
         cor_objeto = objeto['cor']
         motor.desenha_string(janela, posicao_objeto[0], posicao_objeto[1], caractere_objeto, cor_objeto, BRANCO)
 
-    # Desenha a mensagem na tela
+    # desenha a mensagem na tela
     mensagem = estado['mensagem']
-    motor.desenha_string(janela, 0, altura_tela-1, mensagem, PRETO, BRANCO)
+    motor.desenha_string(janela, 10, altura_tela-1, mensagem, PRETO, BRANCO)
 
      # Desenha a quantidade de vidas
     quantidade_vidas = estado['vidas']
