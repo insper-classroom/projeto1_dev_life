@@ -1,7 +1,9 @@
 from constantes import *  # Você pode usar as constantes definidas em constantes.py, se achar útil
                           # Por exemplo, usar a constante CORACAO é o mesmo que colocar a string '❤'
                           # diretamente no código
-import motor_grafico as motor  # Utilize as funções do arquivo motor_grafico.py para desenhar na tela
+import motor_grafico as motor
+
+from motor_grafico import desenha_string  # Utilize as funções do arquivo motor_grafico.py para desenhar na tela
                                # Por exemplo: motor.preenche_fundo(janela, [0, 0, 0]) preenche o fundo de preto
 
 
@@ -27,7 +29,12 @@ def desenha_tela(janela, estado, altura_tela, largura_tela):
         cor_objeto = objeto['cor']
         motor.desenha_string(janela, posicao_objeto[0], posicao_objeto[1], caractere_objeto, cor_objeto, BRANCO)
 
+    # Desenha a mensagem na tela
+    mensagem = estado['mensagem']
+    motor.desenha_string(janela, 0, altura_tela-1, mensagem, PRETO, BRANCO)
+
     motor.mostra_janela(janela)
+
 
 
 def atualiza_estado(estado, tecla):
@@ -40,12 +47,60 @@ def atualiza_estado(estado, tecla):
     # Começamos apagando a mensagem anterior, pois ela já foi mostrada no frame anterior
     estado['mensagem'] = ''
 
-    # Escreva seu código para atualizar o dicionário "estado" com base na tecla apertada pelo jogador aqui
-    # APAGUE ESTA LINHA E ESCREVA SEU CÓDIGO AQUI
-
-    # Ao apertar a tecla 'i', o jogador deve ver o inventário
-    if tecla == 'i':
-        estado['tela_atual'] = TELA_INVENTARIO
-    # Termina o jogo se o jogador apertar ESC ou 'q'
+    posicao_atual = estado['pos_jogador']
+    
+    # pega o mapa e a lista de objetos no estado atual
+    mapa = estado['mapa']
+    objetos = estado['objetos']
+    estado['mensagem'] = 'Vidas disponíveis:' + str(estado['vidas'])
+    
+    # atualiza a posição do jogador
+    if tecla == 'CIMA':
+        nova_posicao = [posicao_atual[0], posicao_atual[1] - 1]
+    elif tecla == 'BAIXO':
+        nova_posicao = [posicao_atual[0], posicao_atual[1] + 1]
+    elif tecla == 'ESQUERDA':
+        nova_posicao = [posicao_atual[0] - 1, posicao_atual[1]]
+    elif tecla == 'DIREITA':
+        nova_posicao = [posicao_atual[0] + 1, posicao_atual[1]]
     elif tecla == motor.ESCAPE or tecla =='q':
         estado['tela_atual'] = SAIR
+    else:
+        # se a tecla que o usuário pressionar for invalida, faz nada
+        return estado
+    
+    # verifica os limites do mapa 
+    if nova_posicao[1] < 0 or nova_posicao[1] >= len(mapa) or \
+            nova_posicao[0] < 0 or nova_posicao[0] >= len(mapa[0]):
+        return estado
+    
+    # verifica se tem um coração na posição
+    for objeto in objetos:
+        if objeto['posicao'] == nova_posicao and objeto['tipo'] == CORACAO:
+            # remove o coração da posição
+            objetos.remove(objeto)
+            # aumenta a vida do usuário, se já não estiver com a vida máxima
+            if estado['vidas'] < estado['max_vidas']:
+                estado['vidas'] += 1
+                # mensagem que aparece quando pega um coração 
+                estado['mensagem'] = 'Você pegou um coração e ganhou uma vida!'
+            elif estado['vidas']==estado['max_vidas']:
+                return estado
+                
+            return estado
+    
+    # ve se tem um espinho na posição
+    for objeto in objetos:
+        if objeto['posicao'] == nova_posicao and objeto['tipo'] == ESPINHO:
+            # diminui a vida do usuario em 1 
+            estado['vidas'] -= 1
+            # mensagem que aparece quado encosta em um espinho
+            estado['mensagem'] = 'Você encostou em um espinho e perdeu uma vida!'
+            # se a quantidade de vidas chegar a 0, da game over
+            if estado['vidas'] == 0:
+                estado['tela_atual'] = NULL
+            return estado
+    
+    # se n tiver nenhum objeto na tela, o jogador vai pra esse lugar
+    estado['pos_jogador'] = nova_posicao
+    return estado
