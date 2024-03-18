@@ -89,3 +89,5 @@ def inicializa_estado():
         'mapa': mapa,
         'mensagem': '',  # Use esta mensagem para mostrar mensagens ao jogador, como "Você perdeu uma vida" ou "Você ganhou uma vida"
     }
+
+

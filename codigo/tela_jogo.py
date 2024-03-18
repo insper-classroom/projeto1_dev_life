@@ -11,9 +11,21 @@ def desenha_tela(janela, estado, altura_tela, largura_tela):
     # O mapa esta armazenado em estado['mapa'].
     motor.preenche_fundo(janela, PRETO)
     
-    # O seu código deve desenhar a tela do jogo aqui a partir dos valores no dicionário "estado"
-    # APAGUE ESTA LINHA E A LINHA ABAIXO E ESCREVA SEU CÓDIGO AQUI
-    motor.desenha_string(janela, 0, altura_tela // 2, 'APAGUE ESTA LINHA', PRETO, BRANCO)
+    # desenha o mapa 
+    for y, linha in enumerate(estado['mapa']):
+        for x, caractere in enumerate(linha):
+            motor.desenha_string(janela, x, y, caractere, PRETO, BRANCO)
+    
+    # desenha jogador
+    posicao_jogador = estado['pos_jogador']
+    motor.desenha_string(janela, posicao_jogador[0], posicao_jogador[1], '@', PRETO, BRANCO)
+    
+    # desenha demais objetos
+    for objeto in estado['objetos']:
+        posicao_objeto = objeto['posicao']
+        caractere_objeto = objeto['tipo']
+        cor_objeto = objeto['cor']
+        motor.desenha_string(janela, posicao_objeto[0], posicao_objeto[1], caractere_objeto, cor_objeto, BRANCO)
 
     motor.mostra_janela(janela)
 
