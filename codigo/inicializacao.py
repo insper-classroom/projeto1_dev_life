@@ -71,23 +71,51 @@ def inicializa_estado():
     largura_mapa = len(mapa[0])
     altura_mapa = len(mapa)
     
-    # Você pode colocar o jogador em outro lugar, se preferir
-    pos_jogador = [largura_mapa//2, altura_mapa//2]  # Meio do mapa
-    
-    # Cria outros objetos do mapa
+    # bota o usuario no meio do mapa
+    pos_jogador = [largura_mapa // 2, altura_mapa // 2]
+
+    # cria os outros objetos pelo mapa
     posicoes_ocupadas = [pos_jogador]
     objetos = []
+    
+    # cria os coracoes
     objetos += gera_objetos(8, CORACAO, VERMELHO, largura_mapa, altura_mapa, posicoes_ocupadas)
+    
+    # cria os espinhos
     objetos += gera_objetos(6, ESPINHO, VERDE_CLARO, largura_mapa, altura_mapa, posicoes_ocupadas)
     
+    # cria um loop pra adicionar as paredes nas extremidades do mapa
+    for x in range(largura_mapa):
+        for y in range(altura_mapa):
+            if x == 0 or x == largura_mapa - 1 or y == 0 or y == altura_mapa - 1:
+                objetos.append({
+                    'tipo': PAREDE,
+                    'posicao': [x, y],
+                    'cor': [150, 75, 0],
+                })
+
+    
+    # cria as paredes com as suas respectivas coordenadas
+    paredes = [
+        [5, 5], [5, 6], [5, 7], [5, 8], [5, 9],  
+        [10, 10], [11, 10], [12, 10], [13, 10], [14, 10],  
+        
+    ]
+    
+    for parede in paredes:
+        objetos.append({
+            'tipo': PAREDE,
+            'posicao': parede,
+            'cor': [150, 75, 0],
+        })
+
     return {
         'tela_atual': TELA_JOGO,
         'pos_jogador': pos_jogador,
-        'vidas': 5,  # Quantidade atual de vidas do jogador - ele pode perder vidas ao colidir com espinhos ou ganhar vidas ao pegar corações
-        'max_vidas': 5,  # Quantidade máxima de vidas que o jogador pode ter - o valor da chave 'vidas' nunca pode ser maior que o valor da chave 'max_vidas'
+        'vidas': 5,
+        'max_vidas': 5,
         'objetos': objetos,
         'mapa': mapa,
-        'mensagem': '',  # Use esta mensagem para mostrar mensagens ao jogador, como "Você perdeu uma vida" ou "Você ganhou uma vida"
+        'mensagem': '',
     }
-
 

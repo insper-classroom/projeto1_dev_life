@@ -30,7 +30,7 @@ No nível básico você deve entender o código fornecido e implementar as segui
 
 ### [Nível Proficiente](proficiente.md)
 
-- [ ] Adiciona paredes na inicialização (ainda sem colisão);
+- [x] Adiciona paredes na inicialização (ainda sem colisão);
 - [ ] Adiciona colisão com as paredes:
     - [ ] Impede o movimento do jogador:
     - [ ] Mostra mensagem na tela.

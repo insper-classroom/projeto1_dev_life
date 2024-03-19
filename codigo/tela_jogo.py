@@ -109,6 +109,15 @@ def atualiza_estado(estado, tecla):
             if estado['vidas'] == 0:
                 estado['tela_atual'] = NULL
             return estado
+
+    # ve se tem uma parede na posicao
+    for parede in objetos:
+        if parede['posicao'] == nova_posicao:
+            # mensagem que aparece se o usuario tentar atravessar a parede
+            estado['mensagem'] = 'Você não pode atracessar uma parede'
+            return estado
+        
+    
     
     # se n tiver nenhum objeto na tela, o jogador vai pra esse lugar
     estado['pos_jogador'] = nova_posicao
