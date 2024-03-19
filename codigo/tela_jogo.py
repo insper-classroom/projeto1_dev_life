@@ -93,6 +93,7 @@ def atualiza_estado(estado, tecla):
                 # mensagem que aparece quando pega um coração 
                 estado['mensagem'] = 'Você pegou um coração e ganhou uma vida!'
             elif estado['vidas']==estado['max_vidas']:
+                estado['mensagem'] = 'Você já tem o máximo de vidas!'
                 return estado
                 
             return estado
