@@ -5,7 +5,7 @@ import motor_grafico as motor
 
 from motor_grafico import desenha_string  # Utilize as funções do arquivo motor_grafico.py para desenhar na tela
                                # Por exemplo: motor.preenche_fundo(janela, [0, 0, 0]) preenche o fundo de preto
-
+import random
 
 def desenha_tela(janela, estado, altura_tela, largura_tela):
     # Utilize o dicionário estado para saber onde o jogador e os outros objetos estão.
@@ -97,6 +97,8 @@ def atualiza_estado(estado, tecla):
                 return estado
                 
             return estado
+
+            
     
     # ve se tem um espinho na posição
     for objeto in objetos:
@@ -112,11 +114,40 @@ def atualiza_estado(estado, tecla):
 
     # ve se tem uma parede na posicao
     for parede in objetos:
-        if parede['posicao'] == nova_posicao:
+        if parede['posicao'] == nova_posicao and parede['tipo']==PAREDE:
             # mensagem que aparece se o usuario tentar atravessar a parede
             estado['mensagem'] = 'Você não pode atracessar uma parede'
             return estado
         
+    # verifica se tem um monstro na posicao
+    for objeto in objetos:
+        if objeto['posicao'] == nova_posicao and objeto['tipo'] == MONSTRO:
+            # Define a probabilidade de ataque
+            probabilidade = random.random()
+            if probabilidade < objeto['probabilidade_de_ataque']:
+                # O ataque do monstro foi bem-sucedido, reduz a vida do jogador
+                estado['vidas'] -= 1
+                estado['mensagem'] = 'Você foi atacado por um monstro'
+                return estado
+                # Verifica se o jogador foi derrotado
+                if estado['vidas'] == 0:
+                    estado['tela_atual'] = TELA_GAME_OVER
+                return estado
+            # se a probabilidade for do usuario atacar
+            else:
+                # verifica se o monstro ainda tem vida
+                if objeto['vidas']!=0:
+                    # se tiver, diminui 1 
+                    objeto['vidas']-=1
+                    # se depois do ataque a vida dele zerar, remove da tela
+                    if objeto['vidas'] == 0:
+                        objetos.remove(objeto)
+                        estado['mensagem'] = 'Você eliminou um monstro!'
+                return estado
+        
+        # se o usuario ficar sem vida, acaba
+        if estado['vidas'] == 0:
+            estado['tela_atual'] = NULL
     
     
     # se n tiver nenhum objeto na tela, o jogador vai pra esse lugar

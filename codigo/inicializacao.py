@@ -79,10 +79,20 @@ def inicializa_estado():
     objetos = []
     
     # cria os coracoes
-    objetos += gera_objetos(8, CORACAO, VERMELHO, largura_mapa, altura_mapa, posicoes_ocupadas)
+    objetos += gera_objetos(8, CORACAO, VERMELHO, largura_mapa-1, altura_mapa-1, posicoes_ocupadas)
     
     # cria os espinhos
-    objetos += gera_objetos(6, ESPINHO, VERDE_CLARO, largura_mapa, altura_mapa, posicoes_ocupadas)
+    objetos += gera_objetos(6, ESPINHO, VERDE_CLARO, largura_mapa-1, altura_mapa-1, posicoes_ocupadas)
+    
+    # cria os monstros
+    objetos += gera_objetos(12, MONSTRO, BRANCO, largura_mapa-1, altura_mapa-1, posicoes_ocupadas)
+
+    #inicializa propriedades mosntro
+    for objeto in objetos:
+        if objeto['tipo'] == MONSTRO:
+            objeto['vidas'] = 5
+            objeto['probabilidade_de_ataque'] = 0.3
+
     
     # cria um loop pra adicionar as paredes nas extremidades do mapa
     for x in range(largura_mapa):

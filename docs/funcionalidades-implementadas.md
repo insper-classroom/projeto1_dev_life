@@ -31,13 +31,13 @@ No nível básico você deve entender o código fornecido e implementar as segui
 ### [Nível Proficiente](proficiente.md)
 
 - [x] Adiciona paredes na inicialização (ainda sem colisão);
-- [ ] Adiciona colisão com as paredes:
-    - [ ] Impede o movimento do jogador:
-    - [ ] Mostra mensagem na tela.
-- [ ] Adiciona monstros:
-    - [ ] Sorteia posições aleatórias para os monstros;
-    - [ ] Adiciona `'vida'` e `'probabilidade_de_ataque'` aos monstros;
-    - [ ] Mostra monstros na tela.
+- [X] Adiciona colisão com as paredes:
+    - [X] Impede o movimento do jogador:
+    - [X] Mostra mensagem na tela.
+- [X] Adiciona monstros:
+    - [X] Sorteia posições aleatórias para os monstros;
+    - [X] Adiciona `'vida'` e `'probabilidade_de_ataque'` aos monstros;
+    - [X] Mostra monstros na tela.
 - [ ] Implementa sistema de batalha:
     - [ ] Verifica se a nova posição do jogador está ocupada por um monstro e impede o movimento;
     - [ ] Sorteia um número aleatório;
