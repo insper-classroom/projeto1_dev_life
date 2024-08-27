@@ -60,7 +60,11 @@ Neste objetivo avaliaremos se a solução que você propôs está tanto bem escr
     - Variáveis tem nomes que não representam seu significado no programa;
     - O programa usa estruturas de condicionais ou loop de maneira incorreta ou confusa;
     - Funções grandes demais, concentrando muitas responsabilidades;
-    - Enviou código comentado.
+    - Enviou trecho de código que não será executado, pois está comentado.
+      ```python
+      # print('Olá mundo!')
+      ```
+      
 - **Proficiente (não limita):** Nenhum dos problemas do nível Básico está presente. Ao atingir o nível proficiente, será considerado o conceito de funcionalidades implementadas sem limitação.
 
 ### Entregas atrasadas
