@@ -22,6 +22,8 @@ Abra o arquivo `jogo.py` no VS Code. Procure entender o que ele faz. Você não 
 
 Implemente a função `gera_posicao_desocupada` no arquivo `incializacao.py` já existe algum código de base e alguns comentários para te ajudar a entender o que deve ser feito.
 
+Caso queira, há um teste para este exercício: [Teste Gera Posição](https://us.prairielearn.com/pl/course_instance/175678/assessment/2521812)
+
 Depois de implementar esta funcionalidade, [faça um commit](git.md).
 
 ## Etapa 4: Inicializando o estado do jogo
