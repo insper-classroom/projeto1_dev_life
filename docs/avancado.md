@@ -10,7 +10,14 @@ Para esta funcionalidade você deve manter o jogador centralizado e a cada movim
 
 ## Funcionalidade 2: Diferentes tipos de inimigos
 
-Adicione outros tipos de inimigos, mais fortes e/ou com mais vidas. É importante que seja possível diferenciar um inimigo do outro.
+Adicione pelo menos 2 tipos novos de inimigos. É importante que seja possível diferenciar um inimigo do outro.
+
+O tipo novo de inimo dever ter as seguintes características diferentes dos outros inimigos:
+- Aparência diferente;
+- Movimentação diferente. 
+    - Por exemplo, um inimigo que se move em zigue-zague, ou somente na vertical, horizontal, diagonal, em círculos, etc;
+- Pode ser mais fraco ou mais forte que os inimigos já existentes;
+- Diferente quantidade de vidas.
 
 ## Funcionalidade 3: Chefão
 
@@ -28,15 +35,19 @@ Ele precisa obrigatoriamente se mover sem se separar (ex: cada parte ir para um 
 
 ## Funcionalidade 4: Sala secreta
 
-Para esta funcionalidade você deve implementar uma sala que não aparece no mapa enquanto o jogador está andando e só é acessível quando o jogador faz alguma ação específica (por exemplo passar por uma posição específica). A sala secreta deve ser um mapa separado, do qual deve ser possível retornar.
+Para esta funcionalidade você deve implementar uma sala que não aparece no mapa enquanto o jogador está andando e só é acessível quando o jogador faz alguma ação específica (por exemplo passar por uma posição específica entrando em alguma espécie de portal). A sala secreta deve ser um mapa separado, do qual deve ser possível retornar. 
 
 ## Funcionalidade 5: Sistema de experiência e níveis
 
 Ao derrotar inimigos o jogador ganha experiência. Ao acumular uma determinada quantidade de experiência, ele sobe de nível. Novos níveis deve trazer algum benefício, como aumento de vida e/ou de força. Essas informações precisam ser visíveis ao jogador.
 
+Ou seja, em algum lugar da tela deve mostrar a quantidade de experiência, e quando o jogador passar de nível, deve mostrar uma mensagem indicando que ele passou de nível e o que mudou.
+
 ## Funcionalidade 6: Itens e inventário
 
 Deve ser possível obter itens no mapa ou ao derrotar inimigos. Esses itens devem ser mostrados na tela de inventário, onde será possível utilizar os itens (ex: poção ou aumento na quantidade de vidas temporariamente).
+
+Deve haver um mínimo de 2 tipos diferentes de itens e no mínimo 2 itens de cada tipo para o jogador encontrar.
 
 ## Funcionalidade 7: Equipamento e limite de mochila
 
@@ -67,6 +78,8 @@ Adicione uma tela inicial, uma tela de game over e uma tela de instruções do j
 
 ## Funcionalidade 11: Faça a sua sugestão :)
 
-Você pode sugerir outras funcionalidades avançadas. Entretanto, para que ela conte para o total, um professor deve aprovar a sua ideia.
+Você pode sugerir uma funcionalidades avançadas. Entretanto, para que ela conte para o total, um professor deve aprovar a sua ideia.
+
+Você deve indicar a funcionalidade respondendo ao formulário a seguir: [Formulário de sugestão de funcionalidade avançada](https://forms.gle/nzzkyPTt2T1ytrbf6).
 
 **Importante:** lembre-se de atualizar o [checklist de funcionalidades](funcionalidades-implementadas.md) e de fazer os commits do seu código.

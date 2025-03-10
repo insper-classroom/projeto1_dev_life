@@ -10,7 +10,7 @@ Comece executando o jogo para garantir que está tudo configurado corretamente. 
 
 No VS Code, clique com o botão direito na pasta `codigo` e selecione "Copiar caminho" (*"Copy path"*). Agora abra o terminal. Se estiver no Windows, use o Windows Terminal. No Mac, use o atalho COMMAND + ESPAÇO para abrir o Spotlight, digite "Terminal" e selecione o aplicativo de terminal.
 
-No terminal, digite `cd ` e cole o caminho da pasta `codigo` que você copiou anteriormente. O comando completo será parecido com este: `cd C:\Users\toshi\Documents\devlife\devlife-23-1-projeto-individual\codigo` (no Windows) ou `cd /Users/toshi/devlife/devlife-23-1-projeto-individual/codigo` (no Mac). Aperte enter.
+No terminal, digite `cd ` e cole o caminho da pasta `codigo` que você copiou anteriormente. O comando completo será parecido com este: `cd C:\Users\toshi\Documents\devlife\devlife-25-1-projeto-individual\codigo` (no Windows) ou `cd /Users/toshi/devlife/devlife-25-1-projeto-individual/codigo` (no Mac). Aperte enter.
 
 Depois digite `python jogo.py` (ou, dependendo da sua configuração: `python3 jogo.py`) e o jogo deverá ser executado.
 
@@ -34,6 +34,8 @@ Depois de implementar esta etapa, mais uma vez, **é hora de fazer outro commit!
 
 Implemente a função `desenha_tela` do arquivo `tela_jogo.py`. Essa função deve desenhar o mapa, o personagem e todos os objetos que estão no dicionário `estado`. Além disso, a quantidade de vidas deve ser mostrada no topo da janela, assim como a mensagem (no valor `estado['mensagem']`) deve ser mostrada na parte inferior da janela.
 
+O mapa (retângulo em verde) deve estar centralizado na tela de forma dinâmica, ou seja, não deve ser uma posição fixa. O mapa deve estar centralizado na tela independente do tamanho da janela.
+
 Teste o seu jogo. Neste ponto, o mapa e os objetos devem estar desenhados na tela (ainda sem nenhum movimento ou interação com o jogador).
 
 Agora já sabe, faça mais um commit.
@@ -43,7 +45,7 @@ Agora já sabe, faça mais um commit.
 Implemente a função `atualiza_estado` do arquivo `tela_jogo.py`. Essa função deve utilizar a tecla apertada pelo usuário para mover o jogador pelo mapa. Com as seguintes restrições:
 
 - Se a posição for fora do mapa, o jogador não deve se mover;
-- Se a posição estiver ocupada por um coração, o coração deve ser removido da lista de objetos do `estado` e a quantidade de vidas deve ser aumentada em 1 (se ainda não estiver com o máximo de vidas). Além disso, deve ser mostrada uma mensagem indicando o que aconteceu;
+- Se a posição estiver ocupada por um coração, o coração deve ser removido da lista de objetos do `estado` e a quantidade de vidas deve ser aumentada em 1 (se ainda não estiver com o máximo de vidas). Caso o jogador esteja com a vida cheia, apenas apague o coração do mapa. Além disso, deve ser mostrada uma mensagem indicando o que aconteceu;
 - Se a posição estiver ocupada por um espinho a quantidade de vidas deve ser diminuida em 1 (o espinho deve continuar na lista de objetos). Se chegar em 0 vidas, o jogo deve terminar. Além disso, deve ser mostrada uma mensagem indicando o que aconteceu.
 
 A partir de agora não vamos ficar te lembrando sempre, mas lembre-se sempre de fazer commits frequentes. Acredite, essa é uma prática que será muito útil no seu dia a dia.

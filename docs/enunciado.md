@@ -49,6 +49,8 @@ Os critérios são cumulativos, ou seja, só é possível atingir o conceito B s
 - **[A] Avançado:** atingiu o conceito B e implementou pelo menos 3 funcionalidades do [nível avançado](avancado.md);
 - **[A+] Avançado:** atingiu o conceito B e implementou pelo menos 6 funcionalidades do [nível avançado](avancado.md).
 
+**IMPORTANTE:** Para uma funcionalidade ser considerada ela deve estar marcada como feita no [checklist de funcionalidades](funcionalidades-implementadas.md).
+
 ### Qualidade de código
 
 Neste objetivo avaliaremos se a solução que você propôs está tanto bem escrita em termos de código Python (bem formatado e legível), quanto em termos do método de resolução usado. Este objetivo apenas limita o conceito da lista acima. Veja abaixo as rubricas e o limite que aplicam no conceito acima:
@@ -66,6 +68,9 @@ Neste objetivo avaliaremos se a solução que você propôs está tanto bem escr
       ```
       
 - **Proficiente (não limita):** Nenhum dos problemas do nível Básico está presente. Ao atingir o nível proficiente, será considerado o conceito de funcionalidades implementadas sem limitação.
+    - Além de nenhum dos problemas do nível Básico, o código deve possuir os itens abaixo:
+        - Código deve possui comentários que explicam o que o código faz. Não é necessário explicar todas as linhas do código, mas é esperado que determinados trechos possuam comentários explicativos do que está sendo feito.
+        - É esperado funções sejam criadas de forma a evitar que muitas linhas de código fiquem dentro de uma função. Ou seja, se alguma função começar a ficar muito grande, é esperado algum trecho de código seja separado em outra função.
 
 ### Entregas atrasadas
 
