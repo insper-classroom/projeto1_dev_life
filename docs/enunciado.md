@@ -26,7 +26,7 @@ O projeto está dividido em 3 partes. Clique nos links para ver mais detalhes de
 - [**Proficiente:**](proficiente.md) paredes e monstros com movimento aleatório, sistema de batalha e mapa carregado a partir de um arquivo;
 - [**Avançado:**](avancado.md) adiciona complexidade ao jogo. Nesta parte você deve escolher quais funcionalidades vai implementar a partir de uma lista pré-definida.
 
-**Importante:** Você deve marcar no arquivo [`funcionalidades-implementadas.md`](funcionalidades-implementadas.md) quais funcionalidades implementou no seu código. Nós utilizaremos essa lista para a correção, portanto não se esqueça de atualizá-la. Você deve enviar um **vídeo** (2 minutos no máximo) mostrando o jogo, funcionamento e funcionalidades implementadas.
+**Importante:** Você deve marcar no arquivo [`funcionalidades-implementadas.md`](funcionalidades-implementadas.md) quais funcionalidades implementou no seu código. Nós utilizaremos essa lista para a correção, portanto não se esqueça de atualizá-la. Você deve gravar um **vídeo** (2 minutos no máximo) mostrando o jogo, funcionamento e funcionalidades implementadas. O link para o vídeo deve ser colocado no arquivo [`funcionalidades-implementadas.md`](funcionalidades-implementadas.md).
 
 Para implementar o projeto você deve utilizar as funções fornecidas pelos professores. Elas são responsáveis por chamar o módulo curses, que desenha strings no terminal. Você tem liberdade para modificar e/ou adicionar novas funções conforme achar necessário.
 
