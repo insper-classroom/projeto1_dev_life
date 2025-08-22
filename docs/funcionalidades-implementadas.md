@@ -2,6 +2,8 @@
 
 As seguintes funcionalidades do projeto foram implementadas:
 
+Coloque aqui o link para o vídeo, de no máximo 2 minutos, do jogo: [LINK VÍDEO](https://linkparaovideo.com)
+
 ### [Nível Básico](basico.md)
 
 No nível básico você deve entender o código fornecido e implementar as seguintes funcionalidades (marque com `x` as que já tiver concluido - nós utilizaremos este checklist para corrigir seu projeto):
